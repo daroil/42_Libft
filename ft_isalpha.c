@@ -4,4 +4,4 @@ int main(char c)
         return(1);
     else
         return(0); 
-}
+} 
