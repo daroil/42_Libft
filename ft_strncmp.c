@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 15:49:13 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/10/11 18:40:53 by dhendzel         ###   ########.fr       */
+/*   Created: 2022/10/11 18:41:53 by dhendzel          #+#    #+#             */
+/*   Updated: 2022/10/11 18:47:06 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlcpy(char *dst, char *src, size_t size)
+int	ft_strncmp(char *s1, char *s2, size_t n)
 {
 	size_t	i;
-	char	temp;
-
+	
 	i = 0;
-	while (i < size - 1 && src[i] != '\0')
+	while (s1[i] != '\0' && i<n)
 	{
-		temp = src[i];
-		dst[i] = temp;
+		if (s1[i] != s2[i])
+			return(s1[i] - s2[i]);
 		i++;
 	}
-	if (size != 0)
-		dst[i] = '\0';
-	return (i);
+	return(0);	
 }
