@@ -6,15 +6,15 @@
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 19:41:39 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/10/10 19:41:40 by dhendzel         ###   ########.fr       */
+/*   Updated: 2022/10/10 21:15:25 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include <stdio.h>
+#include "libft.h"
 
 
-size_t  ft_strlen(char *s);
 
 
 int ft_isalpha(char c)
