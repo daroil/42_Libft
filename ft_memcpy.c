@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 19:43:46 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/10/11 10:58:14 by dhendzel         ###   ########.fr       */
+/*   Created: 2022/10/11 12:32:30 by dhendzel          #+#    #+#             */
+/*   Updated: 2022/10/11 15:05:59 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-
-int ft_isdigit(char c)
+char* ft_memcpy(char* dst, char* src, size_t n)
 {
-    if (c>= '0' && c<='9')
-        return(1);
-    return(0);    
+    size_t i;
+    
+    i=0;
+    while(src[i]!='\0' && i<=n)
+    {
+        dst[i]=src[i];
+        i++;
+    }
+    return(dst);
 }
-

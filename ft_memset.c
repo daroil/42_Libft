@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 19:43:46 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/10/11 10:58:14 by dhendzel         ###   ########.fr       */
+/*   Created: 2022/10/11 11:44:49 by dhendzel          #+#    #+#             */
+/*   Updated: 2022/10/11 12:19:33 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-
-int ft_isdigit(char c)
+char* ft_memset(char* s, char c, size_t len)
 {
-    if (c>= '0' && c<='9')
-        return(1);
-    return(0);    
-}
+    size_t i;
 
+    if (!s)
+        return(0);
+    i=0;
+    while(i!=len && s[i] != '\0')
+    {
+        s[i] = c;
+        i++;
+    }
+    return(s);
+}

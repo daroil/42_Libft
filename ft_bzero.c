@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 19:43:46 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/10/11 10:58:14 by dhendzel         ###   ########.fr       */
+/*   Created: 2022/10/11 12:20:53 by dhendzel          #+#    #+#             */
+/*   Updated: 2022/10/11 12:23:53 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-
-int ft_isdigit(char c)
+int ft_bzero(char* s, size_t n)
 {
-    if (c>= '0' && c<='9')
-        return(1);
-    return(0);    
-}
+    size_t i;
 
+    if (!s)
+        return(0);
+    i=0;
+    while(i!=n && s[i] != '\0')
+    {
+        s[i] = 0;
+        i++;
+    }
+    return(0);
+}
