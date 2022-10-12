@@ -6,7 +6,7 @@
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:50:01 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/10/11 18:51:00 by dhendzel         ###   ########.fr       */
+/*   Updated: 2022/10/12 11:28:41 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int main()
 {
     char    c;
     char str[] = "Hello";
-	char comp[] = "Hellp";
+	char comp[] = "Hellopi";
+	char comp2[] = "Hell";
     char dst[] = "This is destination";
     char src[] = "socurce ficcle";
     char src2[] = "Abrakadabra";
@@ -46,9 +47,11 @@ int main()
     
     printf("%s \n",ft_strchr(src,'c'));
     printf("%s \n",ft_strrchr(src,'c'));
+	printf("%s \n%s \n", comp2, comp);
+	printf("%d \n",ft_strncmp(comp2,comp,7));
+	printf("%s \n",ft_memchr(src2,'b',5));
+    printf("%d \n",ft_memcmp(comp2,comp,7));
 
-	printf("%d \n",ft_strncmp(str,comp,5));
-    
     c=120;
     if (ft_isalpha(c))
         printf("is alpha!");

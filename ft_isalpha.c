@@ -6,11 +6,11 @@
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 19:41:39 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/10/11 11:03:25 by dhendzel         ###   ########.fr       */
+/*   Updated: 2022/10/12 11:29:51 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(char c)
+int ft_isalpha(int c)
 {
     if (c >= 'a' && c <= 'z')
         return(1);

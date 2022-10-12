@@ -6,7 +6,7 @@
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:41:53 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/10/11 18:47:06 by dhendzel         ###   ########.fr       */
+/*   Updated: 2022/10/12 10:52:17 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ int	ft_strncmp(char *s1, char *s2, size_t n)
 	size_t	i;
 	
 	i = 0;
-	while (s1[i] != '\0' && i<n)
+	while (i < n && s1[i] != '\0')
 	{
 		if (s1[i] != s2[i])
-			return(s1[i] - s2[i]);
-		i++;
+			break;
+		i++;	
 	}
-	return(0);	
+	return(s1[i]-s2[i]);	
 }
