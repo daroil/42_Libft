@@ -1,33 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 11:04:37 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/10/13 15:51:03 by dhendzel         ###   ########.fr       */
+/*   Created: 2022/10/13 12:36:59 by dhendzel          #+#    #+#             */
+/*   Updated: 2022/10/13 13:09:03 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_is_plus_or_minus(int c)
 {
-	size_t	i;
-	unsigned char	*str1;
-	unsigned char	*str2;
+	if (c == '+' || c == '-')
+		return(1);
+	return(0);
+}
+
+int	ft_atoi(const char *str)
+{
+	int	i;
+	int	result;
+	int sign;
 
 	i = 0;
-	str1 = (unsigned char*)s1;
-	str2 = (unsigned char*)s2;	
-	if (str1 == str2)
-		return(0);
-	while (i < n)
+	sign = 1;
+	result = 0;
+	if (ft_is_plus_or_minus(str[i]))
 	{
-		if (str1[i] != str2[i])
-			return(str1[i] - str2[i]);
-		i++;		
+		if(str[i] == '-')
+			sign *= -1;
+		i++;
 	}
-	return(0);
+	while (ft_isdigit(str[i]))
+	{
+		result *= 10;
+		result += str[i] - 48;
+		i++;
+	}
+	return(result * sign);	
 }

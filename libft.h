@@ -6,7 +6,7 @@
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 17:09:38 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/10/12 11:32:36 by dhendzel         ###   ########.fr       */
+/*   Updated: 2022/10/13 14:07:35 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-size_t	ft_strlen(char *s);
+size_t	ft_strlen(const char *s);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-void*	ft_memset(void* s, int c, size_t len);
+void	*ft_memset(void* s, int c, size_t len);
 void 	ft_bzero(void *s, size_t n);
-char*	ft_memcpy(char* dst, char* src, size_t n);
-char*	ft_memmove(char* dst, char* src, size_t len);
-int		ft_strlcpy(char* dst, char* src, size_t size);
-int		ft_strlcat(char* dst, char* src, size_t size);
-char	ft_toupper(char c);
-char	ft_tolower(char c);
-char*	ft_strchr(char* s, char c);
-char*	ft_strrchr(char* s, char c);
-int		ft_strncmp(char *s1, char *s2, size_t n);
-char* 	ft_memchr(char *s1, char c, size_t n);
-int 	ft_memcmp(char *s1, char *s2, size_t n);
+void 	*ft_memcpy(void *dst, const void* src, size_t n);
+void 	*ft_memmove(void *dst, const void *src, size_t len);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+int		ft_atoi(const char *str);
+void	*ft_calloc(size_t count, size_t size);
 
 #endif

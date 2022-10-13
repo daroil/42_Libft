@@ -6,12 +6,11 @@
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 19:43:46 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/10/12 11:30:41 by dhendzel         ###   ########.fr       */
+/*   Updated: 2022/10/13 12:58:21 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-
 
 int ft_isdigit(int c)
 {
@@ -19,4 +18,3 @@ int ft_isdigit(int c)
         return(1);
     return(0);    
 }
-
