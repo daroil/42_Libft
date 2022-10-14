@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 13:19:05 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/10/14 11:38:44 by dhendzel         ###   ########.fr       */
+/*   Created: 2022/10/14 13:08:28 by dhendzel          #+#    #+#             */
+/*   Updated: 2022/10/14 13:21:53 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_calloc(size_t count, size_t size)
+char *ft_strjoin(char const *s1, char const *s2)
 {
-	char	*str;
+	size_t	size_1;
+	size_t	size_2;
 	size_t	total_size;
+	char	*s_joined;
 
-	if (size > 0 && (SIZE_MAX / size) < count)
+	size_1 = ft_strlen(s1);
+	size_2 = ft_strlen(s2);
+	total_size = size_1 + size_2;
+	s_joined = malloc(total_size + 1);
+	if (!s_joined)
 		return (NULL);
-	total_size = count * size;
-	str = malloc(total_size);
-	if (!str)
-		return(NULL);
-	ft_bzero(str,total_size);
-	return(str);
+	ft_strlcpy(s_joined,s1,size_1 + 1);
+	ft_strlcat(s_joined,s2,total_size + 1);	
+	return (s_joined);
 }

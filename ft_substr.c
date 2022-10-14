@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 12:15:44 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/10/14 11:29:29 by dhendzel         ###   ########.fr       */
+/*   Created: 2022/10/14 12:47:04 by dhendzel          #+#    #+#             */
+/*   Updated: 2022/10/14 13:07:39 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char	*substr;
 	size_t	i;
+	size_t	size;
 	size_t	j;
-	char	*haystack1;
 
+	if (!s)
+		return (NULL);
+	size = ft_strlen(s);
+	if (size > len)
+		size = len;
+	substr = malloc(size + 1);
+	if (!substr)
+		return (NULL);
 	i = 0;
-	haystack1 = (char *) haystack;
-	if (needle[i]=='\0')
-		return (haystack1);
-	while (haystack1[i] != '\0' && i < len)
+	j = 0;
+	while (s[i] != '\0')
 	{
-		j = 0;
-		while (haystack1[i + j] == needle[j] && haystack1[i + j] != '\0' && i + j < len)
-		{
-			if (needle[j] == '\0')
-				return (&haystack1[i]);
-			j++;
-		}
-		if (needle[j] == '\0')
-				return (&haystack1[i]);	
-		i++;
+		if (i >= start && j < len)
+			substr[j++] = s[i];
+		i++;	
 	}
-	return (NULL);
+	substr[j] = '\0';
+	return (substr);
 }

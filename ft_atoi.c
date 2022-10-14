@@ -6,11 +6,19 @@
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 12:36:59 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/10/13 13:09:03 by dhendzel         ###   ########.fr       */
+/*   Updated: 2022/10/14 11:32:57 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int ft_isaspace(int c)
+{
+	if (c == '\r' || c == '\t' || c == ' '
+	|| c == '\f' || c == '\v' || c == '\n')
+		return (1);
+	return (0);
+}
 
 int	ft_is_plus_or_minus(int c)
 {
@@ -28,6 +36,8 @@ int	ft_atoi(const char *str)
 	i = 0;
 	sign = 1;
 	result = 0;
+	while (ft_isaspace(str[i]))
+		i++;
 	if (ft_is_plus_or_minus(str[i]))
 	{
 		if(str[i] == '-')
