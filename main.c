@@ -6,7 +6,7 @@
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:50:01 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/10/14 21:24:31 by dhendzel         ###   ########.fr       */
+/*   Updated: 2022/10/15 14:22:05 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,9 +96,12 @@ int main()
 	// 	printf("%s ",test[i]);
 	// 	i++;
 	// }
-	int n;
+	// int n;
 	
-	n = 0;
-	printf("%s \n",ft_itoa(n));
+	// n = 0;
+	// printf("%s \n",ft_itoa(n));
+	// char str[] = "Hello";
+	int n = -654648;	
+	ft_putnbr_fd(n,1);	
     return(0);
 } 
