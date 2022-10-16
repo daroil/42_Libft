@@ -6,15 +6,13 @@
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 19:43:46 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/10/13 12:58:21 by dhendzel         ###   ########.fr       */
+/*   Updated: 2022/10/16 14:13:35 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if (c>= '0' && c<='9')
-        return(1);
-    return(0);    
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }

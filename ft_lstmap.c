@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 12:47:04 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/10/16 15:01:36 by dhendzel         ###   ########.fr       */
+/*   Created: 2022/10/16 12:37:39 by dhendzel          #+#    #+#             */
+/*   Updated: 2022/10/16 14:17:38 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*substr;
-	size_t	i;
-	size_t	size;
-	size_t	j;
+	t_list	*second;
+	t_list	*new_start;
+	void	*tmp;
 
-	if (!s)
+	if (!f || !del || lst == NULL)
 		return (NULL);
-	size = ft_strlen(s);
-	if (size > len)
-		size = len;
-	substr = malloc(size + 1);
-	if (!substr)
+	second = ft_lstnew(f(lst->content));
+	if (second == NULL)
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (s[i] != '\0')
+	new_start = second;
+	lst = lst->next;
+	while (lst)
 	{
-		if (i >= start && j < len)
-			substr[j++] = s[i];
-		i++;
+		tmp = f(lst->content);
+		if (tmp != NULL)
+			ft_lstadd_back(&second, ft_lstnew(tmp));
+		else
+			del(tmp);
+		lst = lst->next;
 	}
-	substr[j] = '\0';
-	return (substr);
+	return (new_start);
 }

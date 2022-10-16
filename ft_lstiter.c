@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 12:32:30 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/10/16 14:48:05 by dhendzel         ###   ########.fr       */
+/*   Created: 2022/10/16 12:28:33 by dhendzel          #+#    #+#             */
+/*   Updated: 2022/10/16 14:15:42 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t	i;
-	char	*s1;
-	char	*s2;
-
-	i = 0;
-	s1 = (char *) dst;
-	s2 = (char *) src;
-	while (i < n)
+	while (lst != NULL)
 	{
-		s1[i] = s2[i];
-		i++;
+		f(lst->content);
+		lst = lst->next;
 	}
-	return (s1);
 }

@@ -6,7 +6,7 @@
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 15:49:13 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/10/13 16:10:31 by dhendzel         ###   ########.fr       */
+/*   Updated: 2022/10/16 14:56:53 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		}	
 		dst[i] = '\0';
 	}
-	while(src[i] != '\0')
+	while (src[i] != '\0')
 		i++;
 	return (i);
 }

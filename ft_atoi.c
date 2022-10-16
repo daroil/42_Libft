@@ -6,16 +6,16 @@
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 12:36:59 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/10/14 11:32:57 by dhendzel         ###   ########.fr       */
+/*   Updated: 2022/10/16 14:08:38 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isaspace(int c)
+int	ft_isaspace(int c)
 {
 	if (c == '\r' || c == '\t' || c == ' '
-	|| c == '\f' || c == '\v' || c == '\n')
+		|| c == '\f' || c == '\v' || c == '\n')
 		return (1);
 	return (0);
 }
@@ -23,15 +23,15 @@ int ft_isaspace(int c)
 int	ft_is_plus_or_minus(int c)
 {
 	if (c == '+' || c == '-')
-		return(1);
-	return(0);
+		return (1);
+	return (0);
 }
 
 int	ft_atoi(const char *str)
 {
 	int	i;
 	int	result;
-	int sign;
+	int	sign;
 
 	i = 0;
 	sign = 1;
@@ -40,7 +40,7 @@ int	ft_atoi(const char *str)
 		i++;
 	if (ft_is_plus_or_minus(str[i]))
 	{
-		if(str[i] == '-')
+		if (str[i] == '-')
 			sign *= -1;
 		i++;
 	}
@@ -50,5 +50,5 @@ int	ft_atoi(const char *str)
 		result += str[i] - 48;
 		i++;
 	}
-	return(result * sign);	
+	return (result * sign);
 }
